@@ -1,12 +1,12 @@
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import Navbar from './Navbar';
 import axiosClient from '../utils/axiosInstance';
 
 const Feeds = () => {
-  let mountRef = useRef(false);
+  // let mountRef = useRef(false);
 
   useEffect(() => {
-    if (mountRef.current === true) {
+    // if (mountRef.current === true) {
       const getFeeds = async () => {
         try {
           const response = await axiosClient.get('/posts');
@@ -16,8 +16,8 @@ const Feeds = () => {
         }
       };
       getFeeds();
-    }
-    return () => (mountRef.current = true);
+    // }
+    // return () => (mountRef.current = true);
   }, []);
 
   return (
