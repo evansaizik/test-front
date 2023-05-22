@@ -6,16 +6,17 @@ const Feeds = () => {
   let mountRef = useRef(false);
   const [data, setData] = useState([]);
 
+  const getFeeds = async () => {
+    try {
+      const response = await axiosClient.get('/posts');
+      setData(response?.data?.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   useEffect(() => {
     if (mountRef.current === true) {
-      const getFeeds = async () => {
-        try {
-          const response = await axiosClient.get('/posts');
-          setData(response?.data?.data);
-        } catch (error) {
-          console.error(error);
-        }
-      };
       getFeeds();
     }
     return () => (mountRef.current = true);
@@ -24,6 +25,7 @@ const Feeds = () => {
   return (
     <section className="feeds">
       <Navbar />
+      <button onClick={() => getFeeds()}>Refresh Posts</button>
       <div className="posts">
         {data?.posts?.length > 0
           ? data.posts.map((post, i) => {
