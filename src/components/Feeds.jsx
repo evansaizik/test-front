@@ -3,7 +3,6 @@ import Navbar from './Navbar';
 import axiosClient from '../utils/axiosInstance';
 
 const Feeds = () => {
-  // let mountRef = useRef(false);
   const [data, setData] = useState([]);
 
   const getFeeds = async () => {
@@ -16,10 +15,7 @@ const Feeds = () => {
   };
 
   useEffect(() => {
-    // if (mountRef.current === true) {
-      getFeeds();
-    // }
-    // return () => (mountRef.current = true);
+    getFeeds();
   }, []);
 
   return (

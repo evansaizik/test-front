@@ -5,8 +5,8 @@ const axiosClient = axios.create({
   baseURL: 'https://bubblesme.herokuapp.com/api/v1',
   headers: {
     'Content-Type': 'application/json',
-    'Access-Control-Allow-Origin': 'http://localhost:3000',
-    // 'Access-Control-Allow-Origin': 'https://bubble7.netlify.app',
+    // 'Access-Control-Allow-Origin': 'http://localhost:3000',
+    'Access-Control-Allow-Origin': 'https://bubble7.netlify.app',
     'Access-Control-Allow-Credentials': 'true',
   },
   withCredentials: true,
