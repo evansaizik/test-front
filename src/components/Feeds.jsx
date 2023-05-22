@@ -7,7 +7,7 @@ const Feeds = () => {
 
   const getFeeds = async () => {
     try {
-      const response = await axiosClient.get('/posts');
+      const response = await axiosClient.get('api/v1/posts');
       setData(response?.data?.data);
     } catch (error) {
       console.error(error);

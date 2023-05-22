@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const axiosClient = axios.create({
   // baseURL: 'http://localhost:8080/api/v1',
-  baseURL: 'https://bubblesme.herokuapp.com/api/v1',
+  baseURL: 'https://bubblesme.herokuapp.com',
   headers: {
     'Content-Type': 'application/json',
     // 'Access-Control-Allow-Origin': 'http://localhost:3000',
