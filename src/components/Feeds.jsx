@@ -1,9 +1,9 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Navbar from './Navbar';
 import axiosClient from '../utils/axiosInstance';
 
 const Feeds = () => {
-  let mountRef = useRef(false);
+  // let mountRef = useRef(false);
   const [data, setData] = useState([]);
 
   const getFeeds = async () => {
@@ -16,10 +16,10 @@ const Feeds = () => {
   };
 
   useEffect(() => {
-    if (mountRef.current === true) {
+    // if (mountRef.current === true) {
       getFeeds();
-    }
-    return () => (mountRef.current = true);
+    // }
+    // return () => (mountRef.current = true);
   }, []);
 
   return (
