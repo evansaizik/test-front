@@ -2,11 +2,11 @@ import axios from 'axios';
 
 const axiosClient = axios.create({
   // baseURL: 'http://localhost:8080',
-  baseURL: 'https://bubblesme.herokuapp.com',
+  baseURL: 'https://bubble-fg8r.onrender.com',
   headers: {
     'Content-Type': 'application/json',
     // 'Access-Control-Allow-Origin': 'http://localhost:3000',
-    'Access-Control-Allow-Origin': 'https://bubble7.netlify.app',
+    'Access-Control-Allow-Origin': 'https://bubble-fg8r.onrender.com',
     'Access-Control-Allow-Credentials': 'true',
   },
   withCredentials: true,
