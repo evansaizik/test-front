@@ -30,7 +30,7 @@ const onResponseError = async (error) => {
   console.log(error.config)
   if (error?.request?.status === 403) {
     try {
-      const response = await axiosClient.get('/users/refresh');
+      const response = await axiosClient.get('/api/v1/users/refresh');
 
       localStorage.setItem('accessToken', response.data.accessToken)
 
