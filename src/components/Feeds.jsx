@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Navbar from './Navbar';
 import axiosClient from '../utils/axiosInstance';
 
@@ -14,9 +14,9 @@ const Feeds = () => {
     }
   };
 
-  // useEffect(() => {
-  //   getFeeds();
-  // }, []);
+  useEffect(() => {
+    getFeeds();
+  }, []);
 
   return (
     <section className="feeds">
