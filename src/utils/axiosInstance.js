@@ -6,7 +6,7 @@ const axiosClient = axios.create({
   headers: {
     'Content-Type': 'application/json',
     // 'Access-Control-Allow-Origin': 'http://localhost:3000',
-    'Access-Control-Allow-Origin': 'https://bubble-fg8r.onrender.com',
+    'Access-Control-Allow-Origin': 'https://bubble7.netlify.app',
     'Access-Control-Allow-Credentials': 'true',
   },
   withCredentials: true,
