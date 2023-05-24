@@ -5,15 +5,15 @@ const axiosClient = axios.create({
   baseURL: 'https://bubble-fg8r.onrender.com',
   headers: {
     'Content-Type': 'application/json',
-    // 'Access-Control-Allow-Origin': 'http://localhost:3000',
-    'Access-Control-Allow-Origin': 'https://bubble7.netlify.app',
+    'Access-Control-Allow-Origin': 'http://localhost:3000',
+    // 'Access-Control-Allow-Origin': 'https://bubble7.netlify.app',
     'Access-Control-Allow-Credentials': true,
   },
   withCredentials: true,
 });
 
 const onRequest = (request) => {
-  const token = localStorage.getItem('accessToken') || '';
+  const token = localStorage.getItem('accessToken') || undefined;
   request.headers.authorization = `Bearer ${token}`;
   return request;
 };
@@ -27,7 +27,6 @@ const onResponse = (response) => {
 };
 
 const onResponseError = async (error) => {
-  console.log(error.config)
   if (error?.request?.status === 403) {
     try {
       const response = await axiosClient.get('/api/v1/users/refresh');
